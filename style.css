@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    background: #25445f; /* สีพื้นหลังหลัก */
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow: hidden;
+}
+
+.feliz {
+    font-size: 10rem; /* ขยายขนาดเป็น 4rem */
+    margin-top: 20px;
+    text-shadow: 0 0 15px #8e22d6, 0 0 30px #dd1515, 0 0 45px #ff4500; /* เงาเรืองแสงหลากสี */
+    color: #ffffff; /* สีขาว */
+    font-weight: bold; /* ทำให้ตัวอักษรหนาขึ้น */
+}
+
+/* การตั้งค่าตัวเลข */
+.ano_novo {
+    font-size: 9rem; /* เพิ่มขนาดเป็น 6rem */
+    margin: 50px auto;
+    position: relative;
+    display: inline-block;
+    color: #FF6600; /* สีเหลือง */
+    text-shadow: 0 0 20px #fff024, 0 0 40px #fff024; /* เงาเรืองแสงสีส้มเข้ม */
+    font-weight: bold; /* ทำให้ตัวเลขดูหนาและโดดเด่นขึ้น */
+}
+
+
+.fade-number {
+    /* ตัวเลขที่จะมีการแสดงผลซ้อนกัน โดยเปลี่ยนความโปร่งใส */
+    position: absolute; /* จัดตำแหน่งให้ซ้อนกัน */
+    left: 240px; /* ตำแหน่งแนวนอนของตัวเลข (ปรับได้) */
+    transition: opacity 2s ease-in-out; /* การเปลี่ยนความโปร่งใสแบบ smooth */
+    font-weight: bold; /* ข้อความหนา */
+}
+
+#number-4 {
+    opacity: 1;
+}
+
+#number-5 {
+    opacity: 0; /* ซ่อนเลข 5 เริ่มต้น */
+    z-index: 0;
+    color: #FF0000; /* เปลี่ยนสีของเลข 5 เป็นสีเขียว */
+    font-weight: bold; /* ทำให้เลข 5 ดูหนาขึ้น */
+    transition: opacity 2s ease-in-out, color 1s ease-in-out; /* เพิ่มการเปลี่ยนแปลงสี */
+}
+
+.balao-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.balao {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background: hsl(calc(360 * var(--hue)), 80%, 60%);
+    border-radius: 50%;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
